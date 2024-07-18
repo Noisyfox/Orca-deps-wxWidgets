@@ -16,6 +16,8 @@ function(wx_webview_copy_webview2_loader target)
 
     if(CMAKE_SIZEOF_VOID_P EQUAL 4)
         set(WEBVIEW2_ARCH x86)
+    elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "^(ARM64|aarch64)$")
+        set(WEBVIEW2_ARCH arm64)
     else()
         set(WEBVIEW2_ARCH x64)
     endif()
